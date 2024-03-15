@@ -498,6 +498,8 @@
       window.onscroll = () => {
         parrallax(".vintage", 10); //more is slower
         parrallax(".bgimage", 10);
+        document.querySelector(".danceimage").style.height =
+          "calc(80% - " + window.scrollY / 4 + "px)";
         parrallax(".grassimage", 1);
         //
         document.querySelector(".danceimage").style.transform =
@@ -506,13 +508,13 @@
         document.querySelectorAll(".partytime").forEach((item) => {
           item.style.transform =
             " translate(-50%, calc(-50% - " + window.scrollY / 1.5 + "px))";
-          item.style.opacity = 1 - window.scrollY / 200;
+          item.style.opacity = 1 - window.scrollY / 300;
         });
         //
         document.querySelector(".socailicons").style.transform =
           " translateY(calc(-50% - " + window.scrollY / 1.5 + "px))";
         document.querySelector(".socailicons").style.opacity =
-          1 - window.scrollY / 200;
+          1 - window.scrollY / 300;
         // navbar
         if (window.scrollY < window.innerHeight - 100) {
           document.querySelector("nav").style.backgroundColor = "transparent";
