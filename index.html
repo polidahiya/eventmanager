@@ -24,15 +24,18 @@
         left: 0;
         overflow: hidden;
       }
-      .bgimage {
+      .bgimage,
+      .bgimagelight {
         width: 100%;
         height: 100vh;
         object-fit: cover;
         object-position: bottom;
         z-index: -1;
       }
+      .bgimagelight {
+        display: none;
+      }
       .vintage {
-        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
@@ -72,8 +75,24 @@
         gap: 40px;
       }
       nav .links a {
+        position: relative;
         text-decoration: none;
         color: white;
+        display: flex;
+        align-items: center;
+      }
+      nav .links a::before {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 0%;
+        background-color: white;
+        left: 0;
+        bottom: -2px;
+        transition: 0.3s;
+      }
+      nav .links a:hover::before {
+        width: 100%;
       }
       nav > svg {
         height: 50%;
@@ -95,6 +114,14 @@
         font-size: 10vw;
         font-weight: 900;
         white-space: nowrap;
+      }
+      .lightpartytime {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70vw;
+        display: none;
       }
       .bottompartytime {
         text-shadow: 0 0 10px rgb(184, 240, 255), 0 0 20px rgb(184, 240, 255);
@@ -138,8 +165,11 @@
       .socailicons .icons svg {
         width: 25px;
         aspect-ratio: 1;
+        stroke: white;
+        fill: white;
         cursor: pointer;
         transition: 0.3s;
+        padding: 5px;
       }
       .socailicons .icons:hover svg {
         transform: scale(1.2);
@@ -261,6 +291,150 @@
           opacity: 0;
         }
       }
+      /*  */
+      .plane {
+        height: 40px;
+        aspect-ratio: 1;
+        background: url(Picsart_plane.png) center / contain no-repeat;
+        position: absolute;
+        top: 100px;
+        right: -100px;
+        z-index: 1;
+        animation: plane 60s linear infinite;
+        opacity: 0.8;
+        display: none;
+      }
+      @keyframes plane {
+        0% {
+          right: -100px;
+          top: 100px;
+        }
+        100% {
+          right: 120vw;
+          top: 50px;
+        }
+      }
+    </style>
+    <!-- toggel night and light -->
+    <style>
+      .switch {
+        position: relative;
+        height: 20px;
+        aspect-ratio: 2/1;
+        border: 1.5px solid white;
+        display: flex;
+        border-radius: 100px;
+        padding: 2px;
+      }
+      .switch svg {
+        height: 100%;
+        aspect-ratio: 1;
+      }
+      .switch input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        cursor: pointer;
+      }
+      .slider {
+        position: absolute;
+        height: calc(100% - 4px);
+        aspect-ratio: 1;
+        top: 2px;
+        left: 2px;
+        background-color: white;
+        box-sizing: border-box;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      .sun {
+        animation: rotate 15s linear infinite;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .moon {
+        fill: #73c0fc;
+        animation: tilt 5s linear infinite;
+      }
+      @keyframes tilt {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        25% {
+          transform: rotate(-10deg);
+        }
+
+        75% {
+          transform: rotate(10deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .input:checked + .slider {
+        transform: translateX(100%);
+      }
+      .input:checked .switch {
+        background-color: pink;
+      }
+    </style>
+    <!-- lightmode -->
+    <style>
+      .lightmode {
+        color: black;
+      }
+      .lightmode .partytime {
+        display: none;
+      }
+      .lightmode .lightpartytime {
+        display: block;
+      }
+      .lightmode .danceimage {
+        filter: brightness(1) blur(0px);
+      }
+      .lightmode .grassimage {
+        filter: brightness(1);
+      }
+      .lightmode .vintage {
+        display: none;
+      }
+      .lightmode .bgimage {
+        display: none;
+      }
+      .lightmode .bgimagelight {
+        display: block;
+      }
+      .lightmode nav .links a {
+        color: black;
+      }
+      .lightmode .socailicons .icons svg {
+        background-color: rgb(255, 255, 255);
+        stroke: #3bc7ff;
+        fill: #3bc7ff;
+        border-radius: 5px;
+      }
+      .lightmode .socailicons .icons .title {
+        color: black;
+        text-shadow: 0 0 5px #3bc7ff;
+      }
+      .lightmode .meteor {
+        display: none;
+      }
+      .lightmode .plane {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -270,6 +444,35 @@
         <a href="">Home</a>
         <a href="">Blogs</a>
         <a href="">About Us</a>
+        <div class="switch">
+          <svg
+            class="moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+            ></path>
+          </svg>
+          <svg
+            class="sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g fill="#ffd43b">
+              <circle r="5" cy="12" cx="12"></circle>
+              <path
+                d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"
+              ></path>
+            </g>
+          </svg>
+          <input
+            type="checkbox"
+            class="input"
+            onchange="document.body.classList.toggle('lightmode')"
+          />
+          <span class="slider"></span>
+        </div>
       </div>
       <svg
         viewBox="0 0 24 24"
@@ -307,16 +510,14 @@
       <div class="vintage"></div>
       <div class="grassimage"></div>
       <img class="bgimage" src="bg1.jpg" alt="" />
+      <img class="bgimagelight" src="bg1light.jpg" alt="" />
+      <img class="lightpartytime" src="Picsart_party time.png" alt="" />
       <div class="partytime bottompartytime">Party Time!</div>
       <img class="danceimage" src="anime dance.gif" alt="" />
       <div class="partytime toppartytime">Party Time!</div>
       <div class="socailicons">
         <a href="" class="icons">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
@@ -326,19 +527,13 @@
             <g id="SVGRepo_iconCarrier">
               <path
                 d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM12 15.88C9.86 15.88 8.12 14.14 8.12 12C8.12 9.86 9.86 8.12 12 8.12C14.14 8.12 15.88 9.86 15.88 12C15.88 14.14 14.14 15.88 12 15.88ZM17.92 6.88C17.87 7 17.8 7.11 17.71 7.21C17.61 7.3 17.5 7.37 17.38 7.42C17.26 7.47 17.13 7.5 17 7.5C16.73 7.5 16.48 7.4 16.29 7.21C16.2 7.11 16.13 7 16.08 6.88C16.03 6.76 16 6.63 16 6.5C16 6.37 16.03 6.24 16.08 6.12C16.13 5.99 16.2 5.89 16.29 5.79C16.52 5.56 16.87 5.45 17.19 5.52C17.26 5.53 17.32 5.55 17.38 5.58C17.44 5.6 17.5 5.63 17.56 5.67C17.61 5.7 17.66 5.75 17.71 5.79C17.8 5.89 17.87 5.99 17.92 6.12C17.97 6.24 18 6.37 18 6.5C18 6.63 17.97 6.76 17.92 6.88Z"
-                fill="#ffffff"
               ></path>
             </g>
           </svg>
           <div class="title">Instagram</div>
         </a>
         <a href="" class="icons">
-          <svg
-            fill="#ffffff"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="#ffffff"
-          >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
@@ -355,13 +550,11 @@
         </a>
         <a href="" class="icons">
           <svg
-            fill="#ffffff"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 512 512"
             xml:space="preserve"
-            stroke="#ffffff"
           >
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
@@ -381,6 +574,7 @@
           <div class="title">Twitter</div>
         </a>
       </div>
+      <div class="plane"></div>
     </div>
     <main>
       <div class="eventscontainers">
@@ -497,7 +691,9 @@
       let scrollvalue = 0;
       window.onscroll = () => {
         parrallax(".vintage", 10); //more is slower
+        parrallax(".bgimagelight", 10);
         parrallax(".bgimage", 10);
+        parrallax(".plane", 10);
         document.querySelector(".danceimage").style.height =
           "calc(80% - " + window.scrollY / 4 + "px)";
         parrallax(".grassimage", 1);
@@ -507,9 +703,13 @@
         //
         document.querySelectorAll(".partytime").forEach((item) => {
           item.style.transform =
-            " translate(-50%, calc(-50% - " + window.scrollY / 1.5 + "px))";
+            " translate(-50%, calc(-50% - " + window.scrollY / 5 + "px))";
           item.style.opacity = 1 - window.scrollY / 300;
         });
+        document.querySelector(".lightpartytime").style.transform =
+          " translate(-50%, calc(-50% - " + window.scrollY / 5 + "px))";
+        document.querySelector(".lightpartytime").style.opacity =
+          1 - window.scrollY / 300; //
         //
         document.querySelector(".socailicons").style.transform =
           " translateY(calc(-50% - " + window.scrollY / 1.5 + "px))";
