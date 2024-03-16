@@ -11,6 +11,7 @@
       body {
         margin: 0;
         --bg: #0b1d27;
+        --theme: #d68e43;
         color: white;
         overflow-x: hidden;
         background-color: var(--bg);
@@ -67,20 +68,23 @@
         transform: translateY(-100%);
         transition: 0.5s;
       }
-      nav .logo{
-        height: 100%;
-      }
-      .logolight{
-        display: none;
-      }
       .activenav {
         transform: translateY(0%);
+      }
+      .transnav{
+        background-color: transparent !important;
+      }
+      nav .logo {
+        height: 100%;
+      }
+      .logolight {
+        display: none;
       }
       nav .links {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         display: flex;
         gap: 40px;
       }
@@ -405,10 +409,13 @@
       .lightmode {
         color: black;
       }
-      .lightmode .logodark{
+      .lightmode nav {
+        background-color: white;
+      }
+      .lightmode .logodark {
         display: none;
       }
-      .lightmode .logolight{
+      .lightmode .logolight {
         display: block;
       }
       .lightmode .partytime {
@@ -435,18 +442,24 @@
       .lightmode nav .links a {
         color: black;
       }
-      nav .links a::before {
-        background-color: #3bc7ff;
+      .lightmode nav .links a::before {
+        background-color: var(--theme);
       }
       .lightmode .socailicons .icons svg {
         background-color: rgb(255, 255, 255);
-        stroke: #3bc7ff;
-        fill: #3bc7ff;
+        stroke: var(--theme);
+        fill: var(--theme);
         border-radius: 5px;
       }
       .lightmode .socailicons .icons .title {
         color: black;
-        text-shadow: 0 0 5px #3bc7ff;
+        text-shadow: 0 0 5px var(--theme);
+      }
+      .lightmode .switch {
+        border: 1px solid grey;
+      }
+      .lightmode .slider {
+        background-color: var(--theme);
       }
       .lightmode .meteor {
         display: none;
@@ -457,9 +470,9 @@
     </style>
   </head>
   <body>
-    <nav class="activenav">
-      <img class="logo logodark" src="logodark.png" alt="">
-      <img class="logo logolight" src="logolight.png" alt="">
+    <nav class="activenav transnav">
+      <img class="logo logodark" src="logodark.png" alt="" />
+      <img class="logo logolight" src="logolight.png" alt="" />
       <div class="links">
         <a href="">Home</a>
         <a href="">Blogs</a>
@@ -737,9 +750,9 @@
           1 - window.scrollY / 300;
         // navbar
         if (window.scrollY < window.innerHeight - 100) {
-          document.querySelector("nav").style.backgroundColor = "transparent";
+          document.querySelector("nav").classList.add("transnav");
         } else {
-          document.querySelector("nav").style.backgroundColor = "black";
+          document.querySelector("nav").classList.remove("transnav");
         }
         if (scrollvalue > window.scrollY) {
           document.querySelector("nav").classList.add("activenav");
