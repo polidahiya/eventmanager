@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7398670337880164"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="msvalidate.01" content="E745FFD9C78D58022A962CD8F686FA7D" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="image" content="http://rentbean.in/logo&ui/favicon.png" />
+    <meta
+      name="description"
+      content="Welcome to our premier rental website offering a diverse range of products to meet all your needs! From fitness and gym equipment to cutting-edge electronics, gaming consoles, laptops, and a variety of event and party items, we have everything you need for your convenience. Serving the vibrant areas of Gurgaon(Gurugram), Delhi, and Noida, our platform ensures easy access to quality rentals, making your experience seamless and hassle-free.rentbean.in, Rentbean, Best products on rent in Gurgaon in 2024, Furniture products on rent in Gurgaon in 2024, Appliances on rent in Gurgaon in 2024, Furniture on rent in Gurgaon in 2024, Rent items near me, Rent items in Gurgaon , Rent items in Delhi NCR "
+    />
+    <meta
+      name="keywords"
+      content="rentbean.in, Rentbean, Best products on rent in Gurgaon in 2024, Furniture products on rent in Gurgaon in 2024, Appliances on rent in Gurgaon in 2024, Furniture on rent in Gurgaon in 2024, Rent items near me, Rent items in Gurgaon , Rent items in Delhi NCR "
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Event Planner - Rentbean.in</title>
     <style>
+      * {
+        -webkit-tap-highlight-color: transparent;
+        font-family: "Mulish", sans-serif;
+      }
       html {
         overflow-x: hidden;
       }
@@ -15,6 +41,14 @@
         color: white;
         overflow-x: hidden;
         background-color: var(--bg);
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #d68e43;
+        border-radius: 10px;
       }
       .topcontainer {
         position: fixed;
@@ -42,16 +76,6 @@
         height: 100%;
         background-image: radial-gradient(transparent, var(--bg));
         z-index: 1;
-      }
-      .grassimage {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 200px;
-        background: url(grass.png) center / contain repeat-x;
-        z-index: 4;
-        filter: brightness(0);
       }
       nav {
         position: fixed;
@@ -125,9 +149,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 10vw;
+        font-size: 11vw;
         font-weight: 900;
         white-space: nowrap;
+        font-family: "Times New Roman", Times, serif;
       }
       .lightpartytime {
         position: absolute;
@@ -194,50 +219,155 @@
         transform: translateX(0px);
       }
       /*  */
-      main {
-        padding-top: 100px;
-        position: relative;
-        z-index: 10;
-        margin-top: calc(100vh - 100px);
-        background-image: linear-gradient(180deg, transparent 0 0, black 80px);
-        color: white;
+      .grassimage {
+        position: absolute;
+        top: -200px;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: url(grass.png) center / 100% 100% repeat-x;
+        filter: brightness(0);
       }
-      .eventscontainers:nth-child(1)::before {
+      .grassimage::before {
         content: "";
         position: absolute;
-        height: 100%;
+        height: 200%;
         width: 100%;
         left: 0;
-        top: 0;
-        background: linear-gradient(180deg, black, transparent);
+        top: 100%;
+        transform: translateY(-60px);
+        background: linear-gradient(
+          180deg,
+          transparent,
+          black 60px,
+          transparent
+        );
+      }
+      main {
+        position: relative;
+        z-index: 10;
+        margin-top: 100vh;
+        color: white;
+        background-image: radial-gradient(
+            circle at 3% 95%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 3%,
+            transparent 3%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 62% 55%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 3%,
+            transparent 3%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 75% 91%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 3%,
+            transparent 3%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 78% 74%,
+            rgba(255, 255, 255, 0.01) 0%,
+            rgba(255, 255, 255, 0.01) 3%,
+            transparent 3%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 64% 26%,
+            rgba(255, 255, 255, 0.01) 0%,
+            rgba(255, 255, 255, 0.01) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 54% 24%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 84% 83%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 27% 51%,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(255, 255, 255, 0.02) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 99% 0%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 50% 81%,
+            rgba(255, 255, 255, 0.01) 0%,
+            rgba(255, 255, 255, 0.01) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 22% 7%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 7%,
+            transparent 7%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 39% 72%,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(255, 255, 255, 0.02) 5%,
+            transparent 5%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 94% 80%,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.03) 5%,
+            transparent 5%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 42% 73%,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(255, 255, 255, 0.02) 5%,
+            transparent 5%,
+            transparent 100%
+          ),
+          radial-gradient(
+            circle at 72% 67%,
+            rgba(255, 255, 255, 0.01) 0%,
+            rgba(255, 255, 255, 0.01) 5%,
+            transparent 5%,
+            transparent 100%
+          ),
+          linear-gradient(0deg, hsla(119, 0%, 15%, 1), hsla(134, 0%, 15%, 1));
       }
       .eventscontainers {
         position: relative;
         padding: 50px 0;
         width: 100%;
-        height: 400px;
+        height: 30vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-image: repeating-linear-gradient(
-            45deg,
-            rgb(18, 42, 59) 0px,
-            rgb(18, 42, 59) 1px,
-            transparent 1px,
-            transparent 21px
-          ),
-          repeating-linear-gradient(
-            135deg,
-            rgb(18, 42, 59) 0px,
-            rgb(18, 42, 59) 1px,
-            transparent 1px,
-            transparent 21px
-          ),
-          linear-gradient(135deg, rgb(0, 0, 0), rgb(0, 0, 0));
       }
       .eventscontainers .eventdesc {
-        max-width: 50%;
-        padding-inline: 100px;
+        width: 100%;
+        padding-inline: 50px;
+        box-sizing: border-box;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -249,6 +379,7 @@
         opacity: 0;
         transform: translateY(20px);
         transition: 0.6s 0.2s;
+        font-size: 1.4vw;
       }
       .activeeventscontainers h3 {
         opacity: 1 !important;
@@ -258,27 +389,45 @@
         opacity: 0;
         transform: translateY(20px);
         transition: 0.6s 0.4s;
+        font-size: 1.2vw;
+        font-style: italic;
       }
       .activeeventscontainers p {
         opacity: 1 !important;
         transform: translateY(0px) !important;
       }
       /*  */
-      .eventscontainers img {
+
+      .eventscontainers .imgcontainer {
         height: 100%;
-        object-fit: contain;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         opacity: 0;
         transition: 0.7s;
+        overflow: hidden;
       }
-      .rightimg {
+      .eventscontainers .imgcontainer:hover img {
+        transform: scale(1);
+      }
+      .rightimgcontainer {
         border-radius: 9999px 0 0 9999px;
         transform: translateX(20%);
       }
-      .leftimg {
+      .leftimgcontainer {
         border-radius: 0 9999px 9999px 0;
         transform: translateX(-20%);
       }
-      .activeeventscontainers img {
+
+      .eventscontainers .imgcontainer img {
+        transform: scale(1.2);
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: 0.6s;
+      }
+      .activeeventscontainers .imgcontainer {
         opacity: 1 !important;
         transform: translateX(0%) !important;
       }
@@ -462,6 +611,27 @@
       .lightmode .slider {
         background-color: var(--theme);
       }
+      .lightmode main {
+        background-image: radial-gradient(
+          circle at top left,
+          rgb(219, 171, 17) 0%,
+          rgb(219, 171, 17) 1%,
+          rgb(215, 160, 16) 1%,
+          rgb(215, 160, 16) 49%,
+          rgb(211, 148, 15) 49%,
+          rgb(211, 148, 15) 55%,
+          rgb(207, 137, 14) 55%,
+          rgb(207, 137, 14) 64%,
+          rgb(203, 125, 12) 64%,
+          rgb(203, 125, 12) 72%,
+          rgb(199, 114, 11) 72%,
+          rgb(199, 114, 11) 85%,
+          rgb(195, 102, 10) 85%,
+          rgb(195, 102, 10) 86%,
+          rgb(191, 91, 9) 86%,
+          rgb(191, 91, 9) 100%
+        );
+      }
       .lightmode .meteor {
         display: none;
       }
@@ -543,7 +713,6 @@
     </nav>
     <div class="topcontainer">
       <div class="vintage"></div>
-      <div class="grassimage"></div>
       <img class="bgimage" src="bg1.jpg" alt="" />
       <img class="bgimagelight" src="bg1light.jpg" alt="" />
       <img class="lightpartytime" src="Picsart_party time.png" alt="" />
@@ -612,6 +781,7 @@
       <div class="plane"></div>
     </div>
     <main>
+      <div class="grassimage"></div>
       <div class="eventscontainers">
         <div class="eventdesc">
           <h3>Birthday Celebration</h3>
@@ -637,18 +807,17 @@
             possibilities!
           </p>
         </div>
-        <img
-          class="rightimg"
-          src="images/birthday.jpg"
-          alt="Birthday party event manager"
-        />
+        <div class="imgcontainer rightimgcontainer">
+          <img src="images/birthday.jpg" alt="Birthday party event manager" />
+        </div>
       </div>
       <div class="eventscontainers">
-        <img
-          class="leftimg"
-          src="images/wedding.jpg"
-          alt="wedding celebration party event manager"
-        />
+        <div class="imgcontainer leftimgcontainer">
+          <img
+            src="images/wedding.jpg"
+            alt="wedding celebration party event manager"
+          />
+        </div>
         <div class="eventdesc">
           <h3>Wedding Celebration</h3>
           <p>
@@ -679,18 +848,17 @@
             sophisticated event planning services. 🥂✨"
           </p>
         </div>
-        <img
-          class="rightimg"
-          src="images/corporate.jpg"
-          alt="corporate party event manager"
-        />
+        <div class="imgcontainer rightimgcontainer">
+          <img src="images/corporate.jpg" alt="corporate party event manager" />
+        </div>
       </div>
       <div class="eventscontainers">
-        <img
-          class="leftimg"
-          src="images/privateparty.jpg"
-          alt="private party event manager"
-        />
+        <div class="imgcontainer leftimgcontainer">
+          <img
+            src="images/privateparty.jpg"
+            alt="private party event manager"
+          />
+        </div>
         <div class="eventdesc">
           <h3>Private Party</h3>
           <p>
@@ -722,18 +890,21 @@
             the new! 🎇"
           </p>
         </div>
-        <img
-          class="rightimg"
-          src="images/new year eve party.jpeg"
-          alt="new year eve party event manager"
-        />
+        <div class="imgcontainer rightimgcontainer">
+          <img
+            src="images/new year eve party.jpeg"
+            alt="new year eve party event manager"
+          />
+        </div>
       </div>
       <div class="eventscontainers">
-        <img
-          class="leftimg"
-          src="images/school events.jpg"
-          alt="school events party event manager"
-        />
+        <div class="imgcontainer leftimgcontainer">
+          <img
+            class="leftimg"
+            src="images/school events.jpg"
+            alt="school events party event manager"
+          />
+        </div>
         <div class="eventdesc">
           <h3>School Event</h3>
           <p>
@@ -769,7 +940,6 @@
         parrallax(".plane", 10);
         document.querySelector(".danceimage").style.height =
           "calc(80% - " + window.scrollY / 4 + "px)";
-        parrallax(".grassimage", 1);
         //
         document.querySelector(".danceimage").style.transform =
           " translateX(-50%) translateY(-" + window.scrollY / 1.5 + "px)";
