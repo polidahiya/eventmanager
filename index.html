@@ -375,11 +375,15 @@
         justify-content: center;
       }
       .eventscontainers .eventdesc h3 {
-        text-decoration: underline;
         opacity: 0;
         transform: translateY(20px);
         transition: 0.6s 0.2s;
         font-size: 1.4vw;
+        white-space: nowrap;
+      }
+      .eventscontainers .eventdesc h3::before,
+      .eventscontainers .eventdesc h3::after {
+        content: " ｡･:*˚:✧｡ ";
       }
       .activeeventscontainers h3 {
         opacity: 1 !important;
@@ -613,22 +617,15 @@
       .lightmode main {
         background-image: radial-gradient(
           circle at top left,
-          rgb(219, 171, 17) 0%,
-          rgb(219, 171, 17) 1%,
-          rgb(215, 160, 16) 1%,
-          rgb(215, 160, 16) 49%,
-          rgb(211, 148, 15) 49%,
-          rgb(211, 148, 15) 55%,
-          rgb(207, 137, 14) 55%,
-          rgb(207, 137, 14) 64%,
-          rgb(203, 125, 12) 64%,
-          rgb(203, 125, 12) 72%,
-          rgb(199, 114, 11) 72%,
-          rgb(199, 114, 11) 85%,
-          rgb(195, 102, 10) 85%,
-          rgb(195, 102, 10) 86%,
-          rgb(191, 91, 9) 86%,
-          rgb(191, 91, 9) 100%
+          rgb(242, 106, 56) 0%,
+          rgb(242, 106, 56) 14%,
+          rgb(238, 120, 55) 14%,
+          rgb(238, 120, 55) 34%,
+          rgb(233, 134, 54) 34%,
+          rgb(233, 134, 54) 55%,
+          rgb(229, 148, 53) 55%,
+          rgb(229, 148, 53) 72%,
+          rgb(224, 162, 51) 100%
         );
       }
       .lightmode .meteor {
@@ -647,7 +644,7 @@
           flex-direction: column-reverse;
           align-items: end;
         }
-        .eventscontainers:nth-child(odd){
+        .eventscontainers:nth-child(odd) {
           align-items: start;
           flex-direction: column;
         }
