@@ -397,7 +397,6 @@
         transform: translateY(0px) !important;
       }
       /*  */
-
       .eventscontainers .imgcontainer {
         height: 100%;
         width: 100%;
@@ -637,6 +636,31 @@
       }
       .lightmode .plane {
         display: block;
+      }
+    </style>
+    <!-- mobile -->
+    <style>
+      @media screen and (width<450px) {
+        .eventscontainers {
+          padding: 50px 0;
+          height: unset;
+          flex-direction: column-reverse;
+          align-items: end;
+        }
+        .eventscontainers:nth-child(odd){
+          align-items: start;
+          flex-direction: column;
+        }
+        .eventscontainers .eventdesc h3 {
+          font-size: 18px;
+        }
+        .eventscontainers .eventdesc p {
+          font-size: 16px;
+          display: none;
+        }
+        .eventscontainers .imgcontainer {
+          width: calc(100% - 20px);
+        }
       }
     </style>
   </head>
