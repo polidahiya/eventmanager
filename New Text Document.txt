@@ -3,8 +3,10 @@ indoor :- cake,balloons,flower deco,themes,cutouts,cutleries,props,tra,poper,mus
 outdoor:- trapuling,bouncy,thompson train,kids cars,kids play area(1-4),ball pools,outdoor games,cricket loan,
 
 
-wedding:-
+wedding:-tent,catters,cook,decorations,lightenings,dj,photographers,pandit,
 
 
-
+corporate:-
+indoor:-char game,awards,event operator,
+outdoor:-
 suppports:- fire extinguiser,first aid kit

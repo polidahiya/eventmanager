@@ -36,7 +36,6 @@
       }
       body {
         margin: 0;
-        /* --theme: #d68e43; */
         --theme: #e72e77;
         overflow-x: hidden;
       }
@@ -294,9 +293,11 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 50px;
         margin-top: 50px;
-        height: 20vw;
         box-sizing: border-box;
+        padding: 50px;
         background-image: linear-gradient(
             45deg,
             rgba(254, 246, 210, 0.53) 0%,
@@ -337,17 +338,15 @@
       .promisescontainer .promiscard {
         color: var(--theme);
         background-color: white;
-        height: 60%;
+        height: 150px;
         aspect-ratio: 3/2;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border-radius: 0.5vw;
+        border-radius: 50px 0 50px 0;
       }
-      .promisescontainer .promiscard p{
-        font-size: 1.1vw;
-      }
+
       .promisescontainer .promiscard img {
         height: 50%;
         aspect-ratio: 1;
@@ -355,28 +354,22 @@
       /* Truested by */
       .companies {
         background-color: white;
-        padding: 100px 40px;
+        padding: 50px 40px;
       }
       .companies h1 {
         text-align: center;
-      }
-      .companies .companiesscroll::-webkit-scrollbar {
-        height: 0;
+        margin: 0;
       }
       .companies .companiesscroll {
-        margin: auto;
         margin-top: 30px;
-        height: 80px;
-        max-width: 100%;
-        width: min-content;
-        overflow-x: scroll;
-        overflow-y: hidden;
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 10px;
       }
       .companies .companiesscroll img {
-        height: 100%;
+        height: 80px;
         aspect-ratio: 7/4;
         object-fit: contain;
         box-sizing: border-box;
@@ -419,8 +412,8 @@
         .eventscontainers {
           padding: 50px 0;
           height: unset;
-          flex-direction: column-reverse;
           align-items: end;
+          flex-direction: column-reverse;
         }
         .eventscontainers:nth-child(odd) {
           align-items: start;
@@ -435,6 +428,31 @@
         }
         .eventscontainers .imgcontainer {
           width: calc(100% - 20px);
+        }
+        .eventscontainers .eventdesc button {
+          display: none;
+        }
+        /*  */
+        .promisescontainer {
+          padding: 50px 0px;
+          gap: 20px;
+          justify-content: center;
+        }
+        .promisescontainer .promiscard {
+          height: 150px;
+          aspect-ratio: 1;
+          border-radius: 10 0;
+        }
+        .promisescontainer .promiscard p {
+          white-space: nowrap;
+          font-size: 14px;
+        }
+        /*  */
+        .companies {
+          padding: 50px 20px;
+        }
+        .companies .companiesscroll img {
+          height: 60px;
         }
       }
     </style>
@@ -665,7 +683,7 @@
       </div>
       <!--  -->
       <div class="messagebyus">
-        <h2> ‎ ‎ A Note from CEO ‎ ‎ </h2>
+        <h2>‎ ‎ A Note from CEO ‎ ‎</h2>
         <p>
           Welcome to <span>Rentbean Event Planners</span>, where unforgettable
           moments are crafted with care. With our expertise spanning across
@@ -698,7 +716,7 @@
     <script>
       let scrollvalue = 0;
       window.onscroll = () => {
-        parrallax(".bgimage", 10);
+        parrallax(".bgimage", 3);
         // navbar
         if (window.scrollY < window.innerHeight - 100) {
           document.querySelector("nav").classList.add("transnav");
