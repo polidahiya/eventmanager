@@ -289,10 +289,73 @@
         opacity: 1 !important;
         transform: translateX(0%) !important;
       }
+      /* promises */
+      .promisescontainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 50px;
+        height: 20vw;
+        box-sizing: border-box;
+        background-image: linear-gradient(
+            45deg,
+            rgba(254, 246, 210, 0.53) 0%,
+            rgba(254, 246, 210, 0.53) 14.286%,
+            rgba(221, 240, 216, 0.53) 14.286%,
+            rgba(221, 240, 216, 0.53) 28.572%,
+            rgba(188, 233, 223, 0.53) 28.572%,
+            rgba(188, 233, 223, 0.53) 42.858%,
+            rgba(156, 227, 229, 0.53) 42.858%,
+            rgba(156, 227, 229, 0.53) 57.144%,
+            rgba(123, 220, 235, 0.53) 57.144%,
+            rgba(123, 220, 235, 0.53) 71.42999999999999%,
+            rgba(90, 214, 242, 0.53) 71.43%,
+            rgba(90, 214, 242, 0.53) 85.71600000000001%,
+            rgba(57, 207, 248, 0.53) 85.716%,
+            rgba(57, 207, 248, 0.53) 100.002%
+          ),
+          linear-gradient(
+            135deg,
+            rgb(246, 99, 200) 0%,
+            rgb(246, 99, 200) 12.5%,
+            rgb(223, 98, 196) 12.5%,
+            rgb(223, 98, 196) 25%,
+            rgb(199, 97, 192) 25%,
+            rgb(199, 97, 192) 37.5%,
+            rgb(176, 96, 188) 37.5%,
+            rgb(176, 96, 188) 50%,
+            rgb(152, 95, 184) 50%,
+            rgb(152, 95, 184) 62.5%,
+            rgb(129, 94, 180) 62.5%,
+            rgb(129, 94, 180) 75%,
+            rgb(105, 93, 176) 75%,
+            rgb(105, 93, 176) 87.5%,
+            rgb(82, 92, 172) 87.5%,
+            rgb(82, 92, 172) 100%
+          );
+      }
+      .promisescontainer .promiscard {
+        color: var(--theme);
+        background-color: white;
+        height: 60%;
+        aspect-ratio: 3/2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5vw;
+      }
+      .promisescontainer .promiscard p{
+        font-size: 1.1vw;
+      }
+      .promisescontainer .promiscard img {
+        height: 50%;
+        aspect-ratio: 1;
+      }
       /* Truested by */
       .companies {
         background-color: white;
-        padding: 50px 40px;
+        padding: 100px 40px;
       }
       .companies h1 {
         text-align: center;
@@ -324,6 +387,30 @@
       }
       .companies .companiesscroll img:hover {
         padding: 5px;
+      }
+      /* note by ceo */
+      .messagebyus {
+        position: relative;
+        color: white;
+        padding: 100px 0px;
+        background: url(images/aboutusbg2.jpg) center / cover;
+      }
+      .messagebyus h2 {
+        text-decoration: underline;
+        margin-bottom: 40px;
+      }
+      .messagebyus p {
+        font-style: italic;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+      .messagebyus p span {
+        color: var(--theme);
+      }
+      .messagebyus > * {
+        max-width: 700px;
+        margin: auto;
+        text-align: center;
       }
     </style>
     <!-- mobile -->
@@ -543,30 +630,71 @@
           <button>Explore ></button>
         </div>
       </div>
+      <!-- promises -->
+      <div class="promisescontainer">
+        <div class="promiscard">
+          <img src="primises vectors/gift-svgrepo-com.svg" alt="" />
+          <p>Best Collection</p>
+        </div>
+        <div class="promiscard">
+          <img
+            src="primises vectors/fast-delivery-truck-svgrepo-com.svg"
+            alt=""
+          />
+          <p>Instant Service</p>
+        </div>
+        <div class="promiscard">
+          <img
+            src="primises vectors/telemarketer-support-svgrepo-com.svg"
+            alt=""
+          />
+          <p>Customer Support</p>
+        </div>
+        <div class="promiscard">
+          <img
+            src="primises vectors/payment-method-bank-svgrepo-com.svg"
+            alt=""
+          />
+          <p>Secure Payment</p>
+        </div>
+      </div>
+      <!--  -->
       <div class="companies">
         <h1>Trusted By</h1>
         <div class="companiesscroll"></div>
       </div>
+      <!--  -->
+      <div class="messagebyus">
+        <h2> ‎ ‎ A Note from CEO ‎ ‎ </h2>
+        <p>
+          Welcome to <span>Rentbean Event Planners</span>, where unforgettable
+          moments are crafted with care. With our expertise spanning across
+          Delhi, Gurgaon, and Noida, we specialize in curating exceptional
+          experiences for a variety of occasions.
+        </p>
+        <p>
+          Whether it's the joyous festivities of a Birthday Celebration, the
+          timeless romance of a Wedding Celebration, the professional finesse of
+          a Corporate Event, the intimate charm of a Private Party, the
+          exhilarating countdown of a New Year's Eve bash, or the spirited
+          enthusiasm of a School Event, we are dedicated to turning your vision
+          into reality.
+        </p>
+        <p>
+          From conceptualization to execution, our team ensures every detail is
+          meticulously planned, leaving you free to immerse yourself in the joy
+          of the moment. Let us transform your event into a cherished memory
+          that will be treasured for a lifetime.
+        </p>
+        <p>Contact us today to begin planning your next extraordinary event.</p>
+        <p>Thank you</p>
+      </div>
     </main>
+    <!--to image scrol -->
     <script>
-      let companiesarr = [
-        "companies/IBM.png",
-        "companies/airtel.png",
-        "companies/HSBC.png",
-        "companies/Wynk_music_logo.png",
-        "companies/pizza-hut-.png",
-        "companies/idfc.png",
-        "companies/Reebok-logo.png",
-        "companies/The_Lalit-01.png",
-      ];
-      companiesarr.forEach((companie) => {
-        let companiescard = document.createElement("img");
-        companiescard.src = companie;
-        companiescard.alt = companie;
-        companiescard.setAttribute("loading", "lazy");
-        document.querySelector(".companiesscroll").appendChild(companiescard);
-      });
+      let topimgarr = [];
     </script>
+    <!-- parallax -->
     <script>
       let scrollvalue = 0;
       window.onscroll = () => {
@@ -598,6 +726,26 @@
         document.querySelector(elem).style.transform =
           "translateY(-" + window.scrollY / speed + "px)";
       }
+    </script>
+    <!-- companies -->
+    <script>
+      let companiesarr = [
+        "companies/IBM.png",
+        "companies/airtel.png",
+        "companies/HSBC.png",
+        "companies/Wynk_music_logo.png",
+        "companies/pizza-hut-.png",
+        "companies/idfc.png",
+        "companies/Reebok-logo.png",
+        "companies/The_Lalit-01.png",
+      ];
+      companiesarr.forEach((companie) => {
+        let companiescard = document.createElement("img");
+        companiescard.src = companie;
+        companiescard.alt = companie;
+        companiescard.setAttribute("loading", "lazy");
+        document.querySelector(".companiesscroll").appendChild(companiescard);
+      });
     </script>
   </body>
 </html>
